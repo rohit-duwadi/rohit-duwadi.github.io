@@ -1,136 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Rohit Duwadi</title>
-  <style>
-    body {
-      font-family: Georgia, serif;
-      margin: 0;
-      background: #ffffff;
-      color: #222;
-      line-height: 1.6;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rohit Duwadi</title>
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      padding: 20px 60px;
-      border-bottom: 1px solid #ddd;
-    }
+<style>
+:root {
+  --bg: #f5f5f3;
+  --text: #1f1f1f;
+  --line: #ddd;
+  --link: #1b35c7;
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
 
-    nav a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: #000;
-      font-weight: 500;
-    }
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+/* NAVBAR */
+header {
+  border-top: 4px solid #333;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+}
 
-    .container {
-      display: flex;
-      max-width: 1100px;
-      margin: 40px auto;
-      gap: 40px;
-      padding: 0 20px;
-    }
+.nav {
+  max-width: 1000px;
+  margin: auto;
+  padding: 18px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    .sidebar {
-      width: 280px;
-    }
+.nav h1 {
+  margin: 0;
+  font-size: 26px;
+}
 
-    .sidebar img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 15px;
-    }
+.nav-links a {
+  margin-left: 25px;
+  font-size: 16px;
+}
 
-    .content {
-      flex: 1;
-    }
+/* HERO SECTION */
+.hero {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
 
-    h2 {
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 5px;
-    }
+.bio {
+  font-size: 18px;
+  text-align: justify;
+}
 
-    section {
-      margin-bottom: 30px;
-    }
-  </style>
+.links {
+  margin-top: 25px;
+}
+
+.links a {
+  margin-right: 20px;
+  font-size: 16px;
+}
+
+/* IMAGE */
+.image {
+  display: flex;
+  justify-content: center;
+}
+
+.image img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 60px;
+}
+
+/* SECTION */
+.section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 30px 20px;
+}
+
+.section h2 {
+  font-size: 26px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 5px;
+}
+
+.section ul {
+  padding-left: 20px;
+}
+
+/* FOOTER */
+.footer {
+  border-top: 1px solid var(--line);
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  color: #777;
+}
+
+@media(max-width: 900px){
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .footer {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>Rohit Duwadi</h1>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#research">Research</a>
-    <a href="#cv">CV</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <div class="nav">
+    <h1>Rohit Duwadi</h1>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
 </header>
 
-<div class="container">
+<!-- HERO -->
+<section class="hero" id="about">
 
-  <div class="sidebar">
-    <!-- Add your photo later -->
-    <img src="https://via.placeholder.com/250" alt="Profile">
+  <div>
+    <div class="bio">
+      <p>
+        I am a Research Fellow at <b>Plaksha University</b>. I completed my M.Sc. in Economics
+        from <b>IIT Roorkee</b>. My research interests lie in Applied Microeconomics,
+        Development Economics, Public Finance, Personnel Economics, Conflict Economics,
+        and Productivity & Efficiency Analysis.
+      </p>
+    </div>
 
+    <div class="links">
+      <a href="#">📄 Curriculum Vitae</a>
+      <a href="mailto:your.email@example.com">✉ Email</a>
+    </div>
+  </div>
+
+  <div class="image">
+    <img src="https://via.placeholder.com/300" alt="Profile">
+  </div>
+
+</section>
+
+<!-- RESEARCH -->
+<section class="section" id="research">
+  <h2>Research</h2>
+  <ul>
+    <li>
+      Impact of Terrorism on Investment by Firms: Evidence from Jammu & Kashmir, India.
+      Examined how regional conflict and uncertainty shape capital investment and labor
+      spending decisions using firm-level panel data.
+    </li>
+
+    <li>
+      Guided by Stars: Employee Ratings and the Future of Firm Performance.
+      Studied employee sentiment and firm-level financial outcomes.
+    </li>
+
+    <li>
+      Bank Productivity and Institutional Quality in Nepalese Banking: A DEA-based Assessment.
+      Evaluated efficiency of 27 Nepalese banks using DEA and Malmquist Index.
+    </li>
+  </ul>
+</section>
+
+<!-- CV -->
+<section class="section" id="cv">
+  <h2>CV</h2>
+  <p><a href="#">Download CV (PDF)</a></p>
+</section>
+
+<!-- CONTACT -->
+<footer class="footer" id="contact">
+
+  <div>
     <h3>Rohit Duwadi</h3>
     <p>Research Fellow</p>
     <p>Plaksha University</p>
-
-    <h3>Interests</h3>
-    <p>Applied Microeconomic<br>
-       Public Finance<br>
-       Personnel Economics<br>
-       Conflict Economics<br>
-       Productivity & Efficiency Analysis</p>
   </div>
 
-  <div class="content">
-
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        I am a Research Fellow at Plaksha University. I completed my M.Sc. in Economics
-        from IIT Roorkee. My research interests lie in Applied Microeconomics, Development Economics, Public Finance, Personnel Economics, Conflict Economics and Productivity & Efficiency Analysis.
-      </p>
-    </section>
-
-    <section id="research">
-      <h2>Research</h2>
-      <ul>
-        <li>Impact of Terrorism on Investment by Firms: Evidence from Jammu & Kashmir, India.  Examined how regional conflict and uncertainty shape capital investment and labor spending decisions of manufacturing firms in J&K using firm-level panel data and econometric analysis.</li>
-        <li>Guided by Stars: Employee Ratings and the Future of Firm Performance. Investigated the relationship between employee sentiment and firm-level financial metrics, at the intersection of Personnel Economics and corporate finance.</li>
-        <li>Bank Productivity and Institutional Quality in Nepalese Banking: A DEA-based Assessment Evaluated the efficiency and productivity of 27 Nepalese commercial banks using Data Envelopment Analysis (DEA) and the Malmquist Productivity Index.<li>
-      </ul>
-    </section>
-
-    <section id="cv">
-      <h2>CV</h2>
-      <p><a href="#">Download CV (PDF)</a></p>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: your.email@example.com</p>
-      <p>Location: India</p>
-    </section>
-
+  <div>
+    <h3>Contact</h3>
+    <p>Email: your.email@example.com</p>
+    <p>Location: India</p>
   </div>
 
-</div>
+</footer>
 
 </body>
 </html>
