@@ -1,2 +1,2 @@
-# rohitduwadi.github.io
+# rohit-duwadi.github.io
 Personal academic website
