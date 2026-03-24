@@ -11,6 +11,7 @@
   --text: #1f1f1f;
   --line: #ddd;
   --link: #1b35c7;
+  --muted: #777;
 }
 
 body {
@@ -18,7 +19,7 @@ body {
   font-family: Georgia, serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 a {
@@ -29,7 +30,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* NAVBAR */
 header {
   border-top: 4px solid #333;
   border-bottom: 1px solid var(--line);
@@ -48,18 +48,39 @@ header {
 .nav h1 {
   margin: 0;
   font-size: 26px;
+  font-weight: normal;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
 }
 
 .nav-links a {
-  margin-left: 25px;
   font-size: 16px;
+  color: #000;
+  cursor: pointer;
+  padding-bottom: 2px;
 }
 
-/* HERO SECTION */
+.nav-links a.active {
+  border-bottom: 2px solid #000;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* ABOUT */
 .hero {
   max-width: 1000px;
   margin: auto;
-  padding: 40px 20px;
+  padding: 40px 20px 30px;
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 40px;
@@ -80,7 +101,6 @@ header {
   font-size: 16px;
 }
 
-/* IMAGE */
 .image {
   display: flex;
   justify-content: center;
@@ -90,26 +110,9 @@ header {
   width: 100%;
   max-width: 380px;
   border-radius: 60px;
+  object-fit: cover;
 }
 
-/* SECTION */
-.section {
-  max-width: 1000px;
-  margin: auto;
-  padding: 30px 20px;
-}
-
-.section h2 {
-  font-size: 26px;
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 5px;
-}
-
-.section ul {
-  padding-left: 20px;
-}
-
-/* FOOTER */
 .footer {
   border-top: 1px solid var(--line);
   max-width: 1000px;
@@ -118,15 +121,52 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
-  color: #777;
+  color: var(--muted);
 }
 
-@media(max-width: 900px){
+/* OTHER SECTIONS */
+.section-page {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px 60px;
+}
+
+.section-page h2 {
+  font-size: 28px;
+  font-weight: normal;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 8px;
+  margin-top: 0;
+}
+
+.section-page p,
+.section-page li {
+  font-size: 18px;
+}
+
+.section-page ul {
+  padding-left: 22px;
+}
+
+.cv-box,
+.contact-box {
+  margin-top: 25px;
+  font-size: 18px;
+}
+
+@media(max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
   }
+
   .footer {
     grid-template-columns: 1fr;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
   }
 }
 </style>
@@ -138,83 +178,118 @@ header {
   <div class="nav">
     <h1>Rohit Duwadi</h1>
     <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#research">Research</a>
-      <a href="#cv">CV</a>
-      <a href="#contact">Contact</a>
+      <a class="tab-link active" data-tab="about">About</a>
+      <a class="tab-link" data-tab="research">Research</a>
+      <a class="tab-link" data-tab="cv">CV</a>
+      <a class="tab-link" data-tab="contact">Contact</a>
     </div>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero" id="about">
+<!-- ABOUT TAB -->
+<div id="about" class="tab-content active">
+  <section class="hero">
+    <div>
+      <div class="bio">
+        <p>
+          I am a Research Fellow at <b>Plaksha University</b>. I completed my M.Sc. in Economics
+          from <b>IIT Roorkee</b>. My research interests lie in Applied Microeconomics,
+          Development Economics, Public Finance, Personnel Economics, Conflict Economics,
+          and Productivity &amp; Efficiency Analysis.
+        </p>
+      </div>
 
-  <div>
-    <div class="bio">
-      <p>
-        I am a Research Fellow at <b>Plaksha University</b>. I completed my M.Sc. in Economics
-        from <b>IIT Roorkee</b>. My research interests lie in Applied Microeconomics,
-        Development Economics, Public Finance, Personnel Economics, Conflict Economics,
-        and Productivity & Efficiency Analysis.
-      </p>
+      <div class="links">
+        <a href="Academic_CV_Template (1).pdf" target="_blank">📄 Curriculum Vitae</a>
+        <a href="mailto:rohit.duwadi@plaksha.ac.in">✉ Email</a>
+      </div>
     </div>
 
-    <div class="links">
-      <a href="Academic_CV_Template (1).pdf" target="_blank">Download CV (PDF)</a>
-      <a href="mailto:rohit.duwadi@plaksha.edu.in">✉ Email</a>
+    <div class="image">
+      <img src="image.jpeg" alt="Rohit Duwadi">
     </div>
-  </div>
+  </section>
 
-  <div class="image">
-    <img src="image.jpeg" alt="Profile">
-  </div>
+  <footer class="footer">
+    <div>
+      <h3>Rohit Duwadi</h3>
+      <p>Research Fellow</p>
+      <p>Plaksha University</p>
+    </div>
 
-</section>
+    <div>
+      <h3>Contact</h3>
+      <p>Email: rohit.duwadi@plaksha.ac.in</p>
+      <p>Location: India</p>
+    </div>
+  </footer>
+</div>
 
-<!-- RESEARCH -->
-<section class="section" id="research">
-  <h2>Research</h2>
-  <ul>
-    <li>
-      Impact of Terrorism on Investment by Firms: Evidence from Jammu & Kashmir, India.
-      Examined how regional conflict and uncertainty shape capital investment and labor
-      spending decisions using firm-level panel data.
-    </li>
+<!-- RESEARCH TAB -->
+<div id="research" class="tab-content">
+  <section class="section-page">
+    <h2>Research</h2>
+    <ul>
+      <li>
+        <b>Impact of Terrorism on Investment by Firms: Evidence from Jammu &amp; Kashmir, India.</b>
+        Examined how regional conflict and uncertainty shape capital investment and labor spending
+        decisions using firm-level panel data.
+      </li>
+      <br>
+      <li>
+        <b>Guided by Stars: Employee Ratings and the Future of Firm Performance.</b>
+        Studied employee sentiment and firm-level financial outcomes.
+      </li>
+      <br>
+      <li>
+        <b>Bank Productivity and Institutional Quality in Nepalese Banking: A DEA-based Assessment.</b>
+        Evaluated efficiency of 27 Nepalese banks using DEA and Malmquist Index.
+      </li>
+    </ul>
+  </section>
+</div>
 
-    <li>
-      Guided by Stars: Employee Ratings and the Future of Firm Performance.
-      Studied employee sentiment and firm-level financial outcomes.
-    </li>
+<!-- CV TAB -->
+<div id="cv" class="tab-content">
+  <section class="section-page">
+    <h2>Curriculum Vitae</h2>
+    <div class="cv-box">
+      <p>You can download my CV using the link below.</p>
+      <p><a href="Academic_CV_Template (1).pdf" target="_blank">📄 Download CV (PDF)</a></p>
+    </div>
+  </section>
+</div>
 
-    <li>
-      Bank Productivity and Institutional Quality in Nepalese Banking: A DEA-based Assessment.
-      Evaluated efficiency of 27 Nepalese banks using DEA and Malmquist Index.
-    </li>
-  </ul>
-</section>
+<!-- CONTACT TAB -->
+<div id="contact" class="tab-content">
+  <section class="section-page">
+    <h2>Contact</h2>
+    <div class="contact-box">
+      <p><b>Name:</b> Rohit Duwadi</p>
+      <p><b>Position:</b> Research Fellow</p>
+      <p><b>Institution:</b> Plaksha University</p>
+      <p><b>Email:</b> <a href="mailto:rohit.duwadi@plaksha.ac.in">rohit.duwadi@plaksha.ac.in</a></p>
+      <p><b>Location:</b> India</p>
+    </div>
+  </section>
+</div>
 
-<!-- CV -->
-<section class="section" id="cv">
-  <h2>CV</h2>
-  <p><a href="Academic_CV_Template (1).pdf" target="_blank">Download CV (PDF)</a></p>
-</section>
+<script>
+  const links = document.querySelectorAll('.tab-link');
+  const tabs = document.querySelectorAll('.tab-content');
 
-<!-- CONTACT -->
-<footer class="footer" id="contact">
+  links.forEach(link => {
+    link.addEventListener('click', function () {
+      const target = this.getAttribute('data-tab');
 
-  <div>
-    <h3>Rohit Duwadi</h3>
-    <p>Research Fellow</p>
-    <p>Plaksha University</p>
-  </div>
+      links.forEach(l => l.classList.remove('active'));
+      tabs.forEach(tab => tab.classList.remove('active'));
 
-  <div>
-    <h3>Contact</h3>
-    <p>Email: rohit.duwadi@plaksha.ac.in</p>
-    <p>Location: India</p>
-  </div>
-
-</footer>
+      this.classList.add('active');
+      document.getElementById(target).classList.add('active');
+    });
+  });
+</script>
 
 </body>
 </html>
