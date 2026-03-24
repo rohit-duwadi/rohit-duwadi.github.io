@@ -1,313 +1,375 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rohit Duwadi</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rohit Duwadi</title>
 
-<style>
-:root {
-  --bg: #f5f5f3;
-  --text: #1f1f1f;
-  --line: #ddd;
-  --link: #1b35c7;
-  --muted: #777;
-}
+  <style>
+    :root {
+      --bg: #f5f5f3;
+      --text: #1f1f1f;
+      --line: #d8d8d8;
+      --link: #1b35c7;
+      --muted: #777;
+    }
 
-body {
-  margin: 0;
-  font-family: Georgia, serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.7;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-a {
-  color: var(--link);
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
 
-header {
-  border-top: 4px solid #333;
-  border-bottom: 1px solid var(--line);
-  background: var(--bg);
-}
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
 
-.nav {
-  max-width: 1000px;
-  margin: auto;
-  padding: 18px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    a:hover {
+      text-decoration: underline;
+    }
 
-.nav h1 {
-  margin: 0;
-  font-size: 26px;
-  font-weight: normal;
-}
+    header {
+      border-top: 4px solid #333;
+      border-bottom: 1px solid var(--line);
+      background: var(--bg);
+    }
 
-.nav-links {
-  display: flex;
-  gap: 25px;
-  flex-wrap: wrap;
-}
+    .nav {
+      max-width: 1000px;
+      margin: auto;
+      padding: 18px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
 
-.nav-links a {
-  font-size: 16px;
-  color: #000;
-  cursor: pointer;
-  padding-bottom: 2px;
-}
+    .nav h1 {
+      margin: 0;
+      font-size: 26px;
+      font-weight: normal;
+    }
 
-.nav-links a.active {
-  border-bottom: 2px solid #000;
-}
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
 
-.tab-content {
-  display: none;
-}
+    .nav-links a {
+      font-size: 16px;
+      color: #000;
+      cursor: pointer;
+      padding-bottom: 2px;
+    }
 
-.tab-content.active {
-  display: block;
-}
+    .nav-links a.active {
+      border-bottom: 2px solid #000;
+    }
 
-/* ABOUT */
-.hero {
-  max-width: 1000px;
-  margin: auto;
-  padding: 40px 20px 30px;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 40px;
-  align-items: center;
-}
+    .tab-content {
+      display: none;
+    }
 
-.bio {
-  font-size: 18px;
-  text-align: justify;
-}
+    .tab-content.active {
+      display: block;
+    }
 
-.links {
-  margin-top: 25px;
-}
+    .hero {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px 30px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
 
-.links a {
-  margin-right: 20px;
-  font-size: 16px;
-}
+    .bio {
+      font-size: 18px;
+      text-align: justify;
+    }
 
-.image {
-  display: flex;
-  justify-content: center;
-}
+    .links {
+      margin-top: 25px;
+    }
 
-.image img {
-  width: 100%;
-  max-width: 380px;
-  border-radius: 60px;
-  object-fit: cover;
-}
+    .links a {
+      margin-right: 20px;
+      font-size: 16px;
+    }
 
-.footer {
-  border-top: 1px solid var(--line);
-  max-width: 1000px;
-  margin: auto;
-  padding: 40px 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  color: var(--muted);
-}
+    .image {
+      display: flex;
+      justify-content: center;
+    }
 
-/* OTHER SECTIONS */
-.section-page {
-  max-width: 1000px;
-  margin: auto;
-  padding: 40px 20px 60px;
-}
+    .image img {
+      width: 100%;
+      max-width: 380px;
+      border-radius: 60px;
+      object-fit: cover;
+    }
 
-.section-page h2 {
-  font-size: 28px;
-  font-weight: normal;
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 8px;
-  margin-top: 0;
-}
+    .footer {
+      border-top: 1px solid var(--line);
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      color: var(--muted);
+    }
 
-.section-page p,
-.section-page li {
-  font-size: 18px;
-}
+    .footer h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      color: var(--text);
+      font-weight: normal;
+    }
 
-.section-page ul {
-  padding-left: 22px;
-}
+    .footer p {
+      margin: 4px 0;
+    }
 
-.cv-box,
-.contact-box {
-  margin-top: 25px;
-  font-size: 18px;
-}
+    .section-page {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px 60px;
+    }
 
-@media(max-width: 900px) {
-  .hero {
-    grid-template-columns: 1fr;
-  }
+    .section-block {
+      margin-bottom: 42px;
+    }
 
-  .footer {
-    grid-template-columns: 1fr;
-  }
+    .section-block h2 {
+      font-size: 28px;
+      font-weight: normal;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 8px;
+      margin: 0 0 24px;
+    }
 
-  .nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-}
-</style>
+    .paper-list,
+    .conference-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .paper-item,
+    .conference-item {
+      margin-bottom: 24px;
+    }
+
+    .paper-title {
+      font-size: 19px;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .paper-meta {
+      font-size: 17px;
+      margin-bottom: 6px;
+    }
+
+    .paper-desc {
+      font-size: 17px;
+      margin: 0;
+    }
+
+    .conference-item {
+      font-size: 18px;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .conference-item::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .footer {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <div class="nav">
-    <h1>Rohit Duwadi</h1>
-    <div class="nav-links">
-      <a class="tab-link active" data-tab="about">About</a>
-      <a class="tab-link" data-tab="research">Research</a>
-      <a href="Academic_CV_Template (1).pdf" target="_blank">CV</a>
+  <header>
+    <div class="nav">
+      <h1>Rohit Duwadi</h1>
+      <div class="nav-links">
+        <a class="tab-link active" data-tab="about">About</a>
+        <a class="tab-link" data-tab="research">Research</a>
+        <a href="Academic_CV_Template (1).pdf" target="_blank">CV</a>
+      </div>
     </div>
+  </header>
+
+  <!-- ABOUT TAB -->
+  <div id="about" class="tab-content active">
+    <section class="hero">
+      <div>
+        <div class="bio">
+          <p>
+            I am a Research Fellow at <b>Plaksha University</b>. I completed my M.Sc. in Economics
+            from <b>IIT Roorkee</b>. My research interests lie in Applied Microeconomics,
+            Development Economics, Public Finance, Personnel Economics, Conflict Economics,
+            and Productivity &amp; Efficiency Analysis.
+          </p>
+        </div>
+
+        <div class="links">
+          <a href="Academic_CV_Template (1).pdf" target="_blank">📄 Curriculum Vitae</a>
+          <a href="mailto:rohit.duwadi@plaksha.ac.in">✉ Email</a>
+        </div>
+      </div>
+
+      <div class="image">
+        <img src="image.jpeg" alt="Rohit Duwadi">
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>
+        <h3>Rohit Duwadi</h3>
+        <p>Research Fellow</p>
+        <p>Plaksha University</p>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <p>Email: rohit.duwadi@plaksha.ac.in</p>
+        <p>Location: India</p>
+      </div>
+    </footer>
   </div>
-</header>
 
-<!-- ABOUT TAB -->
-<div id="about" class="tab-content active">
-  <section class="hero">
-    <div>
-      <div class="bio">
-        <p>
-          I am a Research Fellow at <b>Plaksha University</b>. I completed my M.Sc. in Economics
-          from <b>IIT Roorkee</b>. My research interests lie in Applied Microeconomics,
-          Development Economics, Public Finance, Personnel Economics, Conflict Economics,
-          and Productivity &amp; Efficiency Analysis.
-        </p>
+  <!-- RESEARCH TAB -->
+  <div id="research" class="tab-content">
+    <section class="section-page">
+
+      <div class="section-block">
+        <h2>Working Papers</h2>
+        <ul class="paper-list">
+          <li class="paper-item">
+            <div class="paper-title">
+              Impact of Terrorism on Investment by Firms: Evidence from Jammu &amp; Kashmir, India
+            </div>
+            <div class="paper-meta">
+              (<a href="https://sites.google.com/site/prakarshsinghac/" target="_blank">with Prakarsh Singh</a>)
+            </div>
+            <p class="paper-desc">
+              Examines how regional conflict and uncertainty shape capital investment and labor spending decisions using firm-level panel data.
+            </p>
+          </li>
+
+          <li class="paper-item">
+            <div class="paper-title">
+              Guided by Stars: Employee Ratings and the Future of Firm Performance
+            </div>
+            <div class="paper-meta">
+              (<a href="https://sites.google.com/site/prakarshsinghac/" target="_blank">with Prakarsh Singh</a>)
+            </div>
+            <p class="paper-desc">
+              Studies the relationship between employee sentiment and firm-level financial outcomes.
+            </p>
+          </li>
+
+          <li class="paper-item">
+            <div class="paper-title">
+              Bank Productivity and Institutional Quality in Nepalese Banking: A DEA-based Assessment
+            </div>
+            <div class="paper-meta">
+              (M.Sc. thesis with Dr. Rachita Gulati)
+            </div>
+            <p class="paper-desc">
+              Evaluates the efficiency of 27 Nepalese commercial banks using Data Envelopment Analysis and the Malmquist Productivity Index.
+            </p>
+          </li>
+        </ul>
       </div>
 
-      <div class="links">
-        <a href="Academic_CV_Template (1).pdf" target="_blank">📄 Curriculum Vitae</a>
-        <a href="mailto:rohit.duwadi@plaksha.ac.in">✉ Email</a>
+      <div class="section-block">
+        <h2>Work in Progress</h2>
+        <ul class="paper-list">
+          <li class="paper-item">
+            <div class="paper-title">
+              Trends of Adult Heights in India using NFHS Dataset
+            </div>
+            <div class="paper-meta">
+              (<a href="https://sites.google.com/site/prakarshsinghac/" target="_blank">with Prakarsh Singh</a>)
+            </div>
+          </li>
+
+          <li class="paper-item">
+            <div class="paper-title">
+              Impact of Employee Ratings on Stock Performance
+            </div>
+            <div class="paper-meta">
+              (<a href="https://sites.google.com/site/prakarshsinghac/" target="_blank">with Prakarsh Singh</a>)
+            </div>
+          </li>
+        </ul>
       </div>
-    </div>
 
-    <div class="image">
-      <img src="image.jpeg" alt="Rohit Duwadi">
-    </div>
-  </section>
+      <div class="section-block">
+        <h2>Conference Presentations</h2>
+        <ul class="conference-list">
+          <li class="conference-item">Peace and Conflict Workshop, Plaksha University (2026)</li>
+          <li class="conference-item">9th SANEM Annual Economists’ Conference (SAEC), Bangladesh (2026)</li>
+          <li class="conference-item">Indian Institute of Economic Growth &amp; IISER Bhopal Conference, Delhi (2026)</li>
+          <li class="conference-item">7th Annual Economics Conference, Ahmedabad University (January 9–10, 2026)</li>
+          <li class="conference-item">14th Eurasian Peace Science Conference, Panteion University, Athens, Greece (January 2026)</li>
+          <li class="conference-item">India Management Research Conference (IMRC), IIM Ahmedabad (December 2025)</li>
+          <li class="conference-item">20th Annual Conference on Economic Growth &amp; Development, ISI Delhi (December 2025)</li>
+          <li class="conference-item">Jan Tinbergen Peace Conference, Barcelona, Spain (June 2025)</li>
+        </ul>
+      </div>
 
-  <footer class="footer">
-    <div>
-      <h3>Rohit Duwadi</h3>
-      <p>Research Fellow</p>
-      <p>Plaksha University</p>
-    </div>
+    </section>
+  </div>
 
-    <div>
-      <h3>Contact</h3>
-      <p>Email: rohit.duwadi@plaksha.ac.in</p>
-      <p>Location: India</p>
-    </div>
-  </footer>
-</div>
+  <script>
+    const links = document.querySelectorAll(".tab-link");
+    const tabs = document.querySelectorAll(".tab-content");
 
-<!-- RESEARCH TAB -->
-<div id="research" class="tab-content">
-  <section class="section-page">
-    <h2>Working Papers</h2>
-    <ul>
-      <li>
-        <b>Impact of Terrorism on Investment by Firms: Evidence from Jammu &amp; Kashmir, India.</b>
-        (<a href="https://sites.google.com/site/prakarshsinghac/" target="_blank">with Prakarsh Singh</a>)<br>
-        Examined how regional conflict and uncertainty shape capital investment and labor spending
-        decisions using firm-level panel data.
-      </li>
-      <br>
+    links.forEach(link => {
+      link.addEventListener("click", function () {
+        const target = this.getAttribute("data-tab");
 
-      <li>
-        <b>Guided by Stars: Employee Ratings and the Future of Firm Performance.</b>
-        (<a href="https://sites.google.com/site/prakarshsinghac/" target="_blank">with Prakarsh Singh</a>)<br>
-        Studied employee sentiment and firm-level financial outcomes.
-      </li>
-      <br>
+        links.forEach(item => item.classList.remove("active"));
+        tabs.forEach(tab => tab.classList.remove("active"));
 
-      <li>
-        <b>Bank Productivity and Institutional Quality in Nepalese Banking: A DEA-based Assessment.</b>
-        (M.Sc. thesis with Dr. Rachita Gulati)<br>
-        Evaluated efficiency of 27 Nepalese banks using DEA and Malmquist Index.
-      </li>
-    </ul>
-
-    <h2>Work in Progress</h2>
-    <ul>
-      <li>
-        <b>Trends of Adult Heights in India using NFHS Dataset.</b>
-        (<a href="https://sites.google.com/site/prakarshsinghac/" target="_blank">with Prakarsh Singh</a>)
-      </li>
-    </ul>
-
-    <h2>Conference Presentations</h2>
-    <hr>
-
-    <ul>
-      <li>Peace and Conflict Workshop, Plaksha University (2026)</li>
-      <li>9th SANEM Annual Economists’ Conference (SAEC), Bangladesh (2026)</li>
-      <li>Indian Institute of Economic Growth &amp; IISER Bhopal Conference, Delhi (2026)</li>
-      <li>7th Annual Economics Conference, Ahmedabad University (January 9–10, 2026)</li>
-      <li>14th Eurasian Peace Science Conference, Panteion University, Athens, Greece (January 2026)</li>
-      <li>India Management Research Conference (IMRC), IIM Ahmedabad (December 2025)</li>
-      <li>20th Annual Conference on Economic Growth &amp; Development, ISI Delhi (December 2025)</li>
-      <li>Jan Tinbergen Peace Conference, Barcelona, Spain (June 2025)</li>
-    </ul>
-  </section>
-</div>
-    </ul>
-    <h2>Conference Presentations</h2>
-<hr>
-
-<ul>
-  <li>Peace and Conflict Workshop, Plaksha University (2026)</li>
-  <li>9th SANEM Annual Economists’ Conference (SAEC), Bangladesh (2026)</li>
-  <li>Indian Institute of Economic Growth & IISER Bhopal Conference, Delhi (2026)</li>
-  <li>7th Annual Economics Conference, Ahmedabad University (January 9–10, 2026)</li>
-  <li>14th Eurasian Peace Science Conference, Panteion University, Athens, Greece (January 2026)</li>
-  <li>India Management Research Conference (IMRC), IIM Ahmedabad (December 2025)</li>
-  <li>20th Annual Conference on Economic Growth & Development, ISI Delhi (December 2025)</li>
-  <li>Jan Tinbergen Peace Conference, Barcelona, Spain (June 2025)</li>
-</ul>
-  </section>
-</div>
-
-
-<script>
-  const links = document.querySelectorAll('.tab-link');
-  const tabs = document.querySelectorAll('.tab-content');
-
-  links.forEach(link => {
-    link.addEventListener('click', function () {
-      const target = this.getAttribute('data-tab');
-
-      links.forEach(l => l.classList.remove('active'));
-      tabs.forEach(tab => tab.classList.remove('active'));
-
-      this.classList.add('active');
-      document.getElementById(target).classList.add('active');
+        this.classList.add("active");
+        document.getElementById(target).classList.add("active");
+      });
     });
-  });
-</script>
+  </script>
 
 </body>
 </html>
